@@ -6,6 +6,7 @@ export { Services } from "./display/CardGrid.js";
 export { Carousel } from "./interactive/Carousel.js";
 export { CardSlider } from "./interactive/CardSlider.js";
 export { Gallery } from "./interactive/Gallery.js";
+export { GallerySlider } from "./interactive/Gallery.js";
 export { Map } from "./interactive/Map.js";
 export { MessageForm } from "./interactive/MessageForm.js";
 export { FloatButton } from "./interactive/FloatButton.js";

@@ -1,7 +1,7 @@
 import { createCustomElement } from "../../element/index.js";
 
-export const Navbar = (navs = [], attribute = { logo: "", name: "" }) => {
-  const { logo, name } = attribute;
+export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentAtTop: false }) => {
+  const { logo, name, transparentAtTop } = attribute;
 
   const NavbarMenuButton = createCustomElement("i", { class: "navbar-menu-button", class: "fa fa-list-ul" });
   const NavbarMenu = createCustomElement("div", { class: "navbar-menu" }, [NavbarMenuButton]);
@@ -18,7 +18,7 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "" }) => {
   ]);
 
   return {
-    element: createCustomElement("nav", { id: "navbar", class: "navbar" }, [NavbarBrand, NavbarMenu, NavbarLinks]),
+    element: createCustomElement("nav", { id: "navbar", class: `navbar ${transparentAtTop ? "navbar-fixed" : ""}` }, [NavbarBrand, NavbarMenu, NavbarLinks]),
     ui: () => {
       const responsiveMenu = () => {
         if (window.innerWidth < 769) {
@@ -35,6 +35,17 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "" }) => {
         NavbarMenuButton.classList.toggle("fa-list-ul");
         NavbarMenuButton.classList.toggle("fa-chevron-up");
       };
+
+      if (transparentAtTop) {
+        const handleScroll = () => {
+          if (window.scrollY > 50) {
+            document.getElementById("navbar").classList.add("navbar-scrolled");
+          } else {
+            document.getElementById("navbar").classList.remove("navbar-scrolled");
+          }
+        };
+        window.addEventListener("scroll", handleScroll);
+      }
 
       window.addEventListener("resize", responsiveMenu);
       window.addEventListener("load", responsiveMenu);

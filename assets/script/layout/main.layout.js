@@ -3,7 +3,7 @@ import { Navbar, Footer, Subfooter } from "../component/index.js";
 import { dataHeaderNavigation, dataFooter } from "../content/index.js";
 
 export const MainLayout = (...componentFunctions) => {
-  const renderHeaderNavigation = Navbar(dataHeaderNavigation.links, { logo: dataHeaderNavigation.logo, name: dataHeaderNavigation.name });
+  const renderHeaderNavigation = Navbar(dataHeaderNavigation.links, { logo: dataHeaderNavigation.logo, name: dataHeaderNavigation.name, transparentAtTop: true });
   appendElement("header", renderHeaderNavigation.element, renderHeaderNavigation.ui);
 
   componentFunctions.forEach((component) => {

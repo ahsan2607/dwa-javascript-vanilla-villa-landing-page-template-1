@@ -1,13 +1,13 @@
 import { MainLayout } from "../layout/main.layout.js";
 import { appendElement } from "../element/index.js";
-import { Navbar, Carousel, Abouts, Services, Section, MessageForm, Map, FloatButton, Gallery, CardSlider } from "../component/index.js";
+import { Navbar, Carousel, Abouts, Services, Section, MessageForm, Map, FloatButton, Gallery, CardSlider, GallerySlider } from "../component/index.js";
 import { dataHeaderNavigation, dataHeaderCarousel, dataAbout, dataService, dataContact, dataGallery, dataTestimonials } from "../content/index.js";
 import { whatsappIcon } from "../content/graphic/icons.js";
 
 MainLayout(
   () => {
     const { element, ui } = Carousel(dataHeaderCarousel, {
-      headerNavigationId: Navbar(dataHeaderNavigation.links, dataHeaderNavigation.logo, dataHeaderNavigation.name).element.id,
+      // headerNavigationId: Navbar(dataHeaderNavigation.links, dataHeaderNavigation.logo, dataHeaderNavigation.name).element.id,
       autoPlay: true,
       interval: 5000,
     });
@@ -15,7 +15,7 @@ MainLayout(
   },
   () => {
     const { element: elAbouts, ui: uiAbouts } = Abouts(dataAbout, { withButton: true });
-    const { element, ui } = Section("villa-about", "About the Villa", () => elAbouts, uiAbouts);
+    const { element, ui } = Section("villa-about", "", () => elAbouts, uiAbouts);
     appendElement("main", element, ui);
   },
   () => {
@@ -24,7 +24,7 @@ MainLayout(
     appendElement("main", element, ui);
   },
   () => {
-    const { element: elGallery, ui: uiGallery } = Gallery(dataGallery);
+    const { element: elGallery, ui: uiGallery } = GallerySlider(dataGallery);
     const { element, ui } = Section("gallery", "Photo Gallery", () => elGallery, uiGallery);
     appendElement("main", element, ui);
   },
