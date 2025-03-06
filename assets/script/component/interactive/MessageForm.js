@@ -6,23 +6,23 @@ export const MessageForm = () => {
         createCustomElement("input", {
           id: "input-mail-name",
           type: "text",
-          placeholder: "Masukkan Nama...",
+          placeholder: "Insert name...",
         }),
         createCustomElement("input", {
           id: "input-mail-comefrom",
           type: "text",
-          placeholder: "Masukkan Asal...",
+          placeholder: "Insert where you came from...",
         }),
         createCustomElement("textarea", {
           id: "input-mail-text",
           name: "",
-          placeholder: "Masukkan Teks...",
+          placeholder: "Insert message...",
         }),
         createCustomElement("button", {
           id: "input-mail-submit",
           class: "button",
           type: "submit",
-          textContent: "Kirim",
+          textContent: "Send",
         }),
       ]),
     ui: () => {
