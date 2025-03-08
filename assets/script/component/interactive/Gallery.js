@@ -89,7 +89,7 @@ export const GallerySlider = (images = []) => {
 
   // Create slider items
   images.forEach((src, index) => {
-    const imgElement = createCustomElement("img", { class: "gallery-slider-item", src });
+    const imgElement = createCustomElement("img", { class: "gallery-slider-item", src, loading: "lazy" });
     imgElement.addEventListener("click", () => openLightbox(index));
     sliderWrapper.appendChild(imgElement);
   });

@@ -15,12 +15,12 @@ MainLayout(
   },
   () => {
     const { element: elAbouts, ui: uiAbouts } = Abouts(dataAbout, { withButton: true });
-    const { element, ui } = Section("villa-about", "", () => elAbouts, uiAbouts);
+    const { element, ui } = Section("about", "", () => elAbouts, uiAbouts);
     appendElement("main", element, ui);
   },
   () => {
     const { element: elServices, ui: uiServices } = Services(dataService);
-    const { element, ui } = Section("villa-services", "Our Facilities & Services", () => elServices, uiServices);
+    const { element, ui } = Section("services", "Our Facilities & Services", () => elServices, uiServices);
     appendElement("main", element, ui);
   },
   () => {
@@ -30,12 +30,12 @@ MainLayout(
   },
   () => {
     const { element: elCardSlider, ui: uiCardSlider } = CardSlider(dataTestimonials);
-    const { element, ui } = Section("guest-review", "Guest Reviews", () => elCardSlider, uiCardSlider);
+    const { element, ui } = Section("testimonial", "Guest Reviews", () => elCardSlider, uiCardSlider);
     appendElement("main", element, ui);
   },
   () => {
     const { element: elMessageForm, ui: uiMessageForm } = MessageForm();
-    const { element, ui } = Section("booking-form", "Book Your Stay", () => elMessageForm, uiMessageForm);
+    const { element, ui } = Section("contact", "Book Your Stay", () => elMessageForm, uiMessageForm);
     appendElement("main", element, ui);
   },
   () => {

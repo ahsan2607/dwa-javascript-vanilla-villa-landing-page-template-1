@@ -23,7 +23,13 @@
 .navbar-scrolled {
   background-color: var(--primary);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem 4rem;
+  /* padding: 0.5rem 4rem; */
+}
+
+.navbar-links.navbar-scrolled {
+  background-color: transparent;
+  box-shadow: 0 0 0;
+  /* padding: 0.5rem 4rem; */
 }
 
 /* Menu Styling */

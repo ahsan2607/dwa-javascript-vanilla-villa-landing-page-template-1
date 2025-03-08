@@ -14,7 +14,10 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentA
       "ul",
       {},
       navs.map((link) =>
-        createCustomElement("li", {}, [createCustomElement("a", { href: link.link, textContent: link.text }), transparentAtTop ? createCustomElement("hr") : null])
+        createCustomElement("li", {}, [
+          createCustomElement("a", { href: link.link, textContent: link.text }),
+          transparentAtTop && Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 768 ? createCustomElement("hr") : null,
+        ])
       )
     ),
   ]);
@@ -39,7 +42,9 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentA
       };
 
       if (transparentAtTop) {
-        NavbarLinks.style.marginTop = `${NavbarMenu.clientHeight}px`;
+        if (Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0) < 768) {
+          NavbarLinks.style.marginTop = `${NavbarMenu.clientHeight}px`;
+        }
         const handleScroll = () => {
           if (window.scrollY > 50) {
             document.getElementById("navbar").classList.add("navbar-scrolled");

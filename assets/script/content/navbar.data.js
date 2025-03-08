@@ -4,9 +4,9 @@ export const dataHeaderNavigation = {
   name: "Luxury Villa",
   logo: logo,
   links: [
-    { link: "index.html", text: "Home" },
-    { link: "about.html", text: "About Us" },
-    { link: "product.html", text: "Products" },
-    { link: "contact.html", text: "Contacts" },
+    { link: "#", text: "Home" },
+    { link: "#about", text: "About Us" },
+    { link: "#services", text: "Services" },
+    { link: "#contact", text: "Contacts" },
   ],
 };
