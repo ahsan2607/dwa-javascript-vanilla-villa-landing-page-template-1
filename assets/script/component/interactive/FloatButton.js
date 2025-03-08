@@ -1,10 +1,22 @@
 import { chevronUpIcon } from "../../content/graphic/icons.js";
 import { createCustomElement } from "../../element/index.js";
 
-export const FloatButton = (attribute = { link: "#", icon: chevronUpIcon }) => {
-  const { link, icon } = attribute;
+export const FloatButton = (attribute = { link: "#", icon: chevronUpIcon, transparentAtTop: false }) => {
+  const { link, icon, transparentAtTop } = attribute;
+  const FloatButton = createCustomElement("a", { class: `float-button ${transparentAtTop ? "transparent-at-top" : ""}`, href: link }, [createCustomElement("i", { class: icon })]);
   return {
-    element: createCustomElement("a", { class: "float-button", href: link }, [createCustomElement("i", { class: icon })]),
-    ui: () => {},
+    element: FloatButton,
+    ui: () => {
+      if (transparentAtTop) {
+        const handleScroll = () => {
+          if (window.scrollY > 50) {
+            FloatButton.classList.add("scrolled");
+          } else {
+            FloatButton.classList.remove("scrolled");
+          }
+        };
+        window.addEventListener("scroll", handleScroll);
+      }
+    },
   };
 };

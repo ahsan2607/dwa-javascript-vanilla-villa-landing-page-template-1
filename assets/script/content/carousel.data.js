@@ -1,7 +1,7 @@
-import { gallery1 } from "./graphic/images.js";
+import { gallery1, gallery2, gallery3 } from "./graphic/images.js";
 
 export const dataHeaderCarousel = [
   { bgImg: gallery1, title: "A Peaceful Getaway" },
-  { bgImg: gallery1, title: "Luxury and Comfort" },
-  { bgImg: gallery1, title: "Breathtaking Views" },
+  { bgImg: gallery3, title: "Luxury and Comfort" },
+  { bgImg: gallery2, title: "Breathtaking Views" },
 ];

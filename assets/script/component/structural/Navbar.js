@@ -4,16 +4,18 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentA
   const { logo, name, transparentAtTop } = attribute;
 
   const NavbarMenuButton = createCustomElement("i", { class: "navbar-menu-button", class: "fa fa-list-ul" });
-  const NavbarMenu = createCustomElement("div", { class: "navbar-menu" }, [NavbarMenuButton]);
+  const NavbarMenu = createCustomElement("div", { class: `navbar-menu ${transparentAtTop ? "navbar-fixed" : ""}` }, [NavbarMenuButton]);
   const NavbarBrand = createCustomElement("div", { class: "navbar-brand" }, [
     createCustomElement("img", { loading: "lazy", src: logo, alt: "" }),
     name ? createCustomElement("strong", { textContent: name }) : null,
   ]);
-  const NavbarLinks = createCustomElement("div", { class: "navbar-links" }, [
+  const NavbarLinks = createCustomElement("div", { class: `navbar-links ${transparentAtTop ? "transparent-at-top" : ""}` }, [
     createCustomElement(
       "ul",
       {},
-      navs.map((link) => createCustomElement("li", {}, [createCustomElement("a", { href: link.link, textContent: link.text })]))
+      navs.map((link) =>
+        createCustomElement("li", {}, [createCustomElement("a", { href: link.link, textContent: link.text }), transparentAtTop ? createCustomElement("hr") : null])
+      )
     ),
   ]);
 
@@ -37,11 +39,16 @@ export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentA
       };
 
       if (transparentAtTop) {
+        NavbarLinks.style.marginTop = `${NavbarMenu.clientHeight}px`;
         const handleScroll = () => {
           if (window.scrollY > 50) {
             document.getElementById("navbar").classList.add("navbar-scrolled");
+            NavbarMenu.classList.add("navbar-scrolled");
+            NavbarLinks.classList.add("navbar-scrolled");
           } else {
             document.getElementById("navbar").classList.remove("navbar-scrolled");
+            NavbarMenu.classList.remove("navbar-scrolled");
+            NavbarLinks.classList.remove("navbar-scrolled");
           }
         };
         window.addEventListener("scroll", handleScroll);

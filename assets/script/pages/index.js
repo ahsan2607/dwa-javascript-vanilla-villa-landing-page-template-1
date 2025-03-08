@@ -42,6 +42,7 @@ MainLayout(
     appendElement("main", Map(dataContact.map).element);
   },
   () => {
-    appendElement("footer", FloatButton({ link: "https://wa.me/", icon: whatsappIcon }).element);
+    const { element, ui } = FloatButton({ link: "https://wa.me/", icon: whatsappIcon, transparentAtTop: true });
+    appendElement("footer", element, ui);
   }
 );
