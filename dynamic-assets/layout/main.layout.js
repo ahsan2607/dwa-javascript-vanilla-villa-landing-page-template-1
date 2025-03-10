@@ -1,5 +1,5 @@
-import { appendElement } from "../element/index.js";
-import { Navbar, Footer, Subfooter } from "../component/index.js";
+import { appendElement } from "../../assets/script/function/index.js";
+import { Navbar, Footer, Subfooter } from "../../assets/script/component/index.js";
 import { dataHeaderNavigation, dataFooter } from "../content/index.js";
 
 export const MainLayout = (...componentFunctions) => {

@@ -1,6 +1,6 @@
 import { MainLayout } from "../layout/main.layout.js";
-import { appendElement } from "../element/index.js";
-import { Navbar, Carousel, Abouts, Services, Section, MessageForm, Map, FloatButton, Gallery, CardSlider, GallerySlider } from "../component/index.js";
+import { appendElement } from "../../assets/script/function/index.js";
+import { Navbar, Carousel, Abouts, Services, Section, MessageForm, Map, FloatButton, Gallery, CardSlider, GallerySlider } from "../../assets/script/component/index.js";
 import { dataHeaderNavigation, dataHeaderCarousel, dataAbout, dataService, dataContact, dataGallery, dataTestimonials } from "../content/index.js";
 import { whatsappIcon } from "../content/graphic/icons.js";
 

@@ -1,4 +1,4 @@
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Hero = (attribute = { title: "", desc: "", bgImg: "", headerNavigationId: "", img: "", imgAlt: "" }) => {
   const { title, desc, bgImg, headerNavigationId, img, imgAlt } = attribute;

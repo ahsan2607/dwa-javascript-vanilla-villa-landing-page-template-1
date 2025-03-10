@@ -1,4 +1,4 @@
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Navbar = (navs = [], attribute = { logo: "", name: "", transparentAtTop: false }) => {
   const { logo, name, transparentAtTop } = attribute;

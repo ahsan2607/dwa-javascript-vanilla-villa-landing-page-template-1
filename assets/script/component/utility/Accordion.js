@@ -1,5 +1,5 @@
 import { chevronDownIcon, chevronUpIcon } from "../../content/graphic/icons.js";
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Accordion = (id, title, childElement, childUIFunction) => {
   const icon = createCustomElement("i", { class: chevronUpIcon });

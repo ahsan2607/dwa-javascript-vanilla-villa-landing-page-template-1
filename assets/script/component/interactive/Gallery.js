@@ -1,4 +1,4 @@
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Gallery = (images = []) => {
   const galleryContainer = createCustomElement("div", { class: "gallery container" });

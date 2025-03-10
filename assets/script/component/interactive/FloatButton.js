@@ -1,5 +1,5 @@
 import { chevronUpIcon } from "../../content/graphic/icons.js";
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const FloatButton = (attribute = { link: "#", icon: chevronUpIcon, transparentAtTop: false }) => {
   const { link, icon, transparentAtTop } = attribute;

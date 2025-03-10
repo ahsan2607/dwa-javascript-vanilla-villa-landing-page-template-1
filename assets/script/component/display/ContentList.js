@@ -1,4 +1,4 @@
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Contacts = (contactList = []) => {
   return {

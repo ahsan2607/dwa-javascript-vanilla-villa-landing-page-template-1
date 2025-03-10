@@ -1,5 +1,5 @@
 import { chevronLeftIcon, chevronRightIcon } from "../../content/graphic/icons.js";
-import { createCustomElement } from "../../element/index.js";
+import { createCustomElement } from "../../function/index.js";
 
 export const Carousel = (slides = [], attribute = { headerNavigationId: "", autoPlay: true, interval: 3000 }) => {
   const { headerNavigationId, autoPlay, interval } = attribute;

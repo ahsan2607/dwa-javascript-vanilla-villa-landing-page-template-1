@@ -1,4 +1,4 @@
-import { createCustomElement, capitalize } from "../../element/index.js";
+import { createCustomElement, capitalize } from "../../function/index.js";
 
 export const Products = (productsList = [], attribute = { isFeatured: false, category: "", directLink: "", additionalClassList: "", withDirectLink: false }) => {
   const { isFeatured, category, directLink, additionalClassList, withDirectLink } = attribute;
